@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tanaw dashboard</title>
+    <link rel="stylesheet" href="{{url_for ('static', filename = 'css/dashboard.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+  </head>
+  <body>
+
+    <header>
+      <a href="#" class="brand">TANAW</a>
+      <div class="menu">
+        <div class="btn">
+          <i class="fas fa-times close-btn"></i>
+        </div>
+        <a href="#">Home</a>
+        <a class="sub-btn">Classification<i class="fas fa-angle-right dropdown"></i></a>
+         <div class="sub-menu">
+           <a href="#" class="sub-item">Meltdown</a>
+           <a href="#" class="sub-item">Seizure</a>
+           <a href="#" class="sub-item">Images</a>
+         </div>
+         <a class="sub-btn">Settings<i class="fas fa-angle-right dropdown"></i></a>
+         <div class="sub-menu">
+           <a href="#" class="sub-item">Notification</a>
+           <a href="#" class="sub-item">Alert</a>
+         </div>
+         <a href="#about">About</a>
+       </div>
+      </div>
+      
+    </header>
+    <section class="section-main">
+      <h1>PROJECT TANAW</h1>
+    </section>
+    <section class="section-two">
+      <h2 id="about">ABOUT</h2>
+      <p>Tanaw is a device that analyzes the behavior of the child through audio and video alongside a mobile application that is capable of sending an alert with recommendations of the response needed whenever the child is detected to be having a seizure or meltdown. The application also contains the child's recorded actions, allowing the parent, appointed therapist, and assigned psychologist to assess the child's activity.</p>
+      <p>Autism spectrum disorder(ASD) is a disability which concerns the development of children. This is caused by some differences in the brain of the children with ASD. The children with ASD show unpredictable behavior often when they are alone or not being attended by the parent or the guardian looking out for them. The common reason they are not constantly monitored is that the parent is either single or a working parent that needs to attend work due to some everyday needs. 
+        Due to the inconsistent monitoring parents or guardians are not aware  that children might have incoming or occurring seizures and meltdowns. Seizures occur more frequently in individuals on the autism spectrum than in other children. Falling usually occurs when a seizure occurs or during the seizures itself. Next, self harming behaviours and screaming are both the common signs that meltdowns will occur. Due to being unaware of the incoming seizures and meltdowns, this would often result in providing poor proper precautionary responses to seizures and meltdowns. 
+        </p>
+      <p>Tanaw envisions itself as a catalyst that would aid in the safety of children with autism spectrum disorder; provide the assistance needed by single and working parents; and to propagatE awareness about autism worldwide </p>
+    </section>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+         //jquery for toggle sub menus
+     $('.sub-btn').click(function(){
+       $(this).next('.sub-menu').slideToggle();
+       $(this).find('.dropdown').toggleClass('active');
+     });
+     $('.close-btn').click(function(){
+       $('.sub-btn').removeClass('active');
+       $('.sub-item').css("visibility", "visible");
+     });
+   });
+    //javascript for navigation bar effect on scroll
+    window.addEventListener("scroll", function(){
+      var header = document.querySelector("header");
+      header.classList.toggle('sticky', window.scrollY > 0);
+    });
+
+    //javascript for responsive navigation sidebar menu
+    var menu = document.querySelector('.menu');
+    var menuBtn = document.querySelector('.menu-btn');
+    var closeBtn = document.querySelector('.close-btn');
+
+    menuBtn.addEventListener("click", () => {
+      menu.classList.add('active');
+    });
+
+    closeBtn.addEventListener("click", () => {
+      menu.classList.remove('active');
+    });
+    
+    </script>
+
+  </body>
+</html>
+      

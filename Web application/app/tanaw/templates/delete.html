@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Delete</title>
+      <link rel="stylesheet" href="{{url_for ('static', filename = 'css/style.css')}}">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+      <div style="background-image: url('static/images/about.png');"></div>
+      <div class="wrapper">
+         <div class="title-text">
+            <div class="title delete">
+               Tanaw Update
+               <img src="{{url_for ('static', filename = 'images/logo.png')}}" width="150" height="80" class="center">
+            </div>
+         </div>
+         <div class="form-container">
+            <div class="form-inner">
+               <form action="/delete" method="POST" class="delete">
+                  <div class="field">
+                     <input type="text" name="username" placeholder="Username" required>
+                  </div>
+                  <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <input type="submit" value="Delete">
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+
+      <script>
+         const deleteText = document.querySelector(".title-text .delete");
+         const deleteForm = document.querySelector("form.delete");
+         const deleteBtn = document.querySelector("label.delete");
+         deleteBtn.onclick = (()=>{
+            deleteForm.style.marginLeft = "0%";
+            deleteText.style.marginLeft = "0%";
+         });
+      </script>
+   </body>
+</html>
